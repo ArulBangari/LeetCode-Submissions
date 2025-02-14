@@ -4,7 +4,7 @@ To be able to follow the **SumRegion** working on **0(1)** time complexity, you 
 Create the 2D prefix array.Then use the 2D prefix array to find the sum of the elements of the matrix inside the rectangle. To do this, follow the following steps:
 * Find the sum of the elements at the lower right corner **(row2, col2)**, which will give the sum of elements from **(0,0)** to **(row2, col2)**.
 * Subtract the sum of elements at the upper right corner **(row1 - 1, col2)**. Using **row1** will include the 1st row (which we want in the sumRegion rectangle) in the subtraction. This will leave the sum of the elements from **(row1, 0)** to **(row2, col2)**.
-* Subtract the sum of elements at the lower left corner **(row2, col1 - 1)**. As stated earlier, using **col1 - 1** makes it so that **col1** will not be subtracted as well. This will leave the sum of the elements from **(row1, col1)** to **(row2, col2)** but will subtract an extra area sum of **(0,0)** to **(row1 - 1, col1 -1)**.
+* Subtract the sum of elements at the lower left corner **(row2, col1 - 1)**. As stated earlier, using **col1 - 1** makes it so that **col1** will not be subtracted as well. This will leave the sum of the elements from **(row1, col1)** to **(row2, col2)** but will subtract an extra area sum of **(0,0)** to **(row1 - 1, col1 - 1)**.
 * Add the area sum that was subtracted twice, to get the sum of the elements in the rectangle.
 
 ## Code Explanation
