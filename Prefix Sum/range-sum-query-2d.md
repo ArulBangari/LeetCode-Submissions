@@ -9,7 +9,7 @@ Create the 2D prefix array.Then use the 2D prefix array to find the sum of the e
 
 ## Code Explanation
 ### def __init__(self, matrix: List[List[int]]):
-In this method, I am initializing the sum prefix array. To make it easier and to account for edge cases, it is best to make all the elements in the 0 column and row 0. Pretty much, the 2D prefix sum array is not "0-indexed" like the matrix is. This means that the prefix sum at [row, column] is for the matrix[row - 1, column - 1].
+In this method, I am initializing the sum prefix array. To make it easier and to account for edge cases, it is best to make all the elements in the 0 column and row 0. Pretty much, the 2D prefix sum array is not "0-indexed" like the matrix is. This means that the prefix sum at **[row, column]** is for the **matrix[row - 1, column - 1]**.
 The element of each cell in the 2D array is equal to the matrix element plus the prefix sum at the cell to the left of it plus the prefix sum at the cell above it minus the double counted area. As stated earlier, when I am looping through the array, I am one behind in terms of column and row.
 
 ### def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
