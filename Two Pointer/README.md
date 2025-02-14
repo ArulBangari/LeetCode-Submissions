@@ -1,4 +1,4 @@
-### [1768. Merge Strings Alternately] (https://leetcode.com/problems/merge-strings-alternately/description/)
+### [1768. Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/description/)
 ## Explanation
 Use two pointers to keep track of which index you are on in each string. Then loop through both, while adding letters in alternating order, until you reach the end of the lowest string. Then loop through the string that was longer and add it to the end of the merged string.
 
