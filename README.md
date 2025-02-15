@@ -36,3 +36,11 @@ If any of the partitions sum up to **i**, you should add it to the punishment su
 This method recursively loops through **i * i** converted to a string to create the first substrings/partitions. After creating the partitions, it adds the partition to the temporary sum and calls itself again to add the extra substrings/partitions. You want to check if the temporary sum is equal to the goal only when you have reached the end of the number.
 ### def punishmentNumber(self, n: int) -> int:
 This method loops from **1** to **n** and calls the **checkPunishment** method to see if the current number it is on fulfills the 2nd condition stated earlier. If the 2nd condition is satisfied, it adds **i * i** to the punishment number.
+
+# [18. 4Sum](https://leetcode.com/problems/4sum/)
+## Explanation
+You want to use a 2 pointer strategy for this problem. First sort the array and since the problem wants a 4 numbers that sum up to the target, use nested loops to loop over the the array. Now that you need 2 more numbers, use the 2 pointer strategy. Since the array is sorted, if the sum is greater than the target, subtract 1 from the right pointer. If the sum is less than the target, add 1 to the left pointer. Even if you find a quadruplet, still keep checking because there might be more than 1.
+
+## Code Explanation
+### def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+I'm sorting the array, creating the return array, and creating the index(**i1**) for the outer loop. In the outer while loop, I am setting the 2nd index(**i2**) to **i1 + 1** to follow the constraint that **a, b, c, d** are all distinct for the quadruplet. In the inner loop, I set the left pointer(**l**) to **i2 + 1** for the same reason. The right index(**r**) is set to **len(nums) - 1** for the 2 pointer strategy. In the 3rd while loop, I add 1 to the left pointer until it's the next number because I don't want duplicate quadruplets. This is why I do that for **i2** and **i1**.
