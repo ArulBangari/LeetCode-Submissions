@@ -44,3 +44,11 @@ You want to use a 2 pointer strategy for this problem. First sort the array and 
 ## Code Explanation
 ### def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
 I'm sorting the array, creating the return array, and creating the index(**i1**) for the outer loop. In the outer while loop, I am setting the 2nd index(**i2**) to **i1 + 1** to follow the constraint that **a, b, c, d** are all distinct for the quadruplet. In the inner loop, I set the left pointer(**l**) to **i2 + 1** for the same reason. The right index(**r**) is set to **len(nums) - 1** for the 2 pointer strategy. In the 3rd while loop, I add 1 to the left pointer until it's the next number because I don't want duplicate quadruplets. This is why I do that for **i2** and **i1**.
+
+# [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/description/)
+## Explanation
+Instead of starting from the lowest numbers and sorting that way, it's best to start from the back of the array and sort from the largest numbers. This is because you can use the largest numbers to overwrite the zeros because they don't matter. So, the pointers for **num1** and **num2** will be **index1** = **m - 1** and **index2** = **n - 1**. Then whichever is bigger you overwrite the number at **index1 + index2**. Then subtract one from the index that had that bigger number.
+
+## Code Explanation
+### def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+I'm checking to see when either indices hit 0. If they do, then exit the loop because there will be an Index Out of Range error. I am adding 1 to **index1 + index2** because there will be an extra one subtracted from the total index.
